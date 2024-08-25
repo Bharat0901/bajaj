@@ -3,6 +3,7 @@ from collections import OrderedDict
 import json
 from urllib.parse import quote as url_quote
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -49,4 +50,5 @@ def bfhl_get():
     return jsonify(response), 200
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
