@@ -10,7 +10,7 @@ function App() {
     try {
       const parsedInput = JSON.parse(jsonInput);
       // Replace the API URL with your actual backend URL
-      const result = await fetch('http://127.0.0.1:5000/bfhl', {
+      const result = await fetch('https://bajaj-6gyx.onrender.com/bfhl', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(parsedInput),
